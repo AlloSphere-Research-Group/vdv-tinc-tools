@@ -27,6 +27,7 @@ On a bash shell:
 
 Now the folder is no longer a git repository.
 
+### Optional: Pushing to your own git repository
 You can convert the folder into a git repository of your choice with the following commands. (Example is using a github repository)
         
     git remote add origin git@github.com:username/new_repo
