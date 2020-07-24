@@ -1,15 +1,16 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(Allotemplate)
-
-# name of application. replace 'app' with desired app name
+# name of application. set desired app name
 set(APP_NAME app)
 
-# path to main source file
-add_executable(${APP_NAME} src/main.cpp)
+project(${APP_NAME})
 
-# add allolib as a subdirectory to the project
-add_subdirectory(allolib)
+# path to main source file
+add_executable(${APP_NAME} src/computationchain.cpp)
+
+# add allolib and tinc as a subdirectory to the project
+# add_subdirectory(allolib)
+add_subdirectory(tinc)
 
 if (EXISTS ${CMAKE_CURRENT_LIST_DIR}/al_ext)
   message("Buiding extensions in al_ext")
@@ -19,7 +20,8 @@ if (EXISTS ${CMAKE_CURRENT_LIST_DIR}/al_ext)
 endif()
 
 # link allolib to project
-target_link_libraries(${APP_NAME} PRIVATE al)
+# target_link_libraries(${APP_NAME} PRIVATE al)
+target_link_libraries(${APP_NAME} PRIVATE tinc)
 
 # example line for find_package usage
 # find_package(Qt5Core REQUIRED CONFIG PATHS "C:/Qt/5.12.0/msvc2017_64/lib" NO_DEFAULT_PATH)
