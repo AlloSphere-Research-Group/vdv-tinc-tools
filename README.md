@@ -17,10 +17,30 @@ git
 
 cmake version 3.0 or higher
 
-## How to setup
+## How to install
+On a bash shell:
+
+    git clone https://github.com/AlloSphere-Research-Group/allotemplate.git <project folder name>
+    cd <project folder name>
+
+    ./init.sh
+
+Now the folder is no longer a git repository.
+
+You can convert the folder into a git repository of your choice with the following commands. (Example is using a github repository)
+
+    git init
+    git remote add origin git@github.com:username/new_repo
+
+Initialize and pull the tinc submodule, and build the dependencies.
+
     git submodule update --recursive --init
     cd tinc
     ./build_deps.sh
+
+After the initial commit, set the upstream with the following command.
+
+    git push -u origin master
 
 ## How to compile / run
 src folder contains the initial test code you can replace.
