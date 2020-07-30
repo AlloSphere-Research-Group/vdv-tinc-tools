@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.0)
 
 # name of application. set desired app name
-set(APP_NAME app)
+set(APP_NAME voltage_scroller)
 
 project(${APP_NAME})
 
 # path to main source file
-add_executable(${APP_NAME} src/computationchain.cpp)
+add_executable(${APP_NAME} src/voltage_scroller.cpp)
 
 # add allolib and tinc as a subdirectory to the project
 # add_subdirectory(allolib)
